@@ -40,7 +40,7 @@
     <br/> <br/>
 
     {% else %}
-    <h2 style='color:red'>{{user}}, вы не можете удалить перевал от {{rock.tourist}}, не являясь его владельцем</h2>
+    <h2 style='color:red'>{{user}}, вы не можете удалить перевал от {{rock.tourist}}, не являясь его владельцем или модератором</h2>
     <a href="{% url 'rocks:home' %}">
         <li><i class="fa-solid fa-house"></i> <<<< На главнаую</li>
     </a>

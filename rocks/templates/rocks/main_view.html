@@ -29,8 +29,10 @@
             <th> "level:"</th>
             <th> "Категория:"</th>
             <th> "Статус:"</th>
+            {% if item.pass_status == "новый" %}
             <th> "Изменить:"</th>
             <th> "Удалить:"</th>
+            {% endif %}
 
         </tr>
 
@@ -55,8 +57,10 @@
             {% else %}
             <td width="100">{{item.pass_status}}</td>
             {% endif %}
+            {% if item.pass_status == "новый" %}
             <td width="100"><a href="{% url 'rocks:update' item.id %}"><u>&#128260;</u></a></td>
             <td width="100"><a href="{% url 'rocks:delete' item.id %}"><u> &#128683; </u></a></td>
+            {% endif %}
         </tr>
         {% endfor %}
         <h5> Вы можете просмотреть перевал подробнее, кликнув по нему </h5>

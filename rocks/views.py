@@ -78,7 +78,11 @@ class RockUpdateView(PermissionRequiredMixin, UpdateView):
     template_name = 'rocks/update.html'
     success_url = '/'
 
-    # success_url = f'/Rock<int:{_id}>
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs.update({'user': self.request.user})
+        return kwargs
+
     def test_func(self):
         rock = self.get_object()
         if self.request.user == rock.tourist:
