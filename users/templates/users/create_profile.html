@@ -1,18 +1,27 @@
-{% extends 'users/home.html' %}
+{% extends 'users/main.html' %}
+
 {% block content %}
-    {% if request.user.is_authenticated %}
-        <div class="header-bar">
-            <a href="{% url 'home' %}">&#8592; На домашнюю</a>
-        </div>
-    &lt;div class="card-body"&gt;
-        &lt;form method="POST" action="" enctype="multipart/form-data"&gt;
+{% if request.user.is_authenticated %}
+<div style="color: #71797E; width: 700px; height: 100px;font-size: 25px; margin: 20px; ">
+    <h1>Страница туриста {{user}}</h1>
+</div>
+<div class="header-bar">
+    <a href="{% url 'rocks:home' %}"> &#8592; На домашнюю</a>
+</div>
+
+    <div class="card-body">
+        <form method="POST" action="" enctype="multipart/form-data"  >
             {% csrf_token %}
             {{form.as_p}}
-            &lt;input class="button" type="submit" value="Submit"&gt;
-        &lt;/form&gt;
-    &lt;/div&gt;
+            <input class="button" type="submit" value="Submit">
+            <br/><br/>
+            <input type="button" value="Cancel" onclick="history.back()"/>
+        </form>
+    </div>
+
 {% else %}
-    &lt;a href="{% url '' %}"&gt;Login&lt;/a&gt;
+<h2>Not "is_authenticated" {{user}}</h2>
+<a href="{% url 'users:create_user_profile' %}">Присоединиться к Туристам</a>
 {% endif %}
 
 {% endblock content %}

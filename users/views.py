@@ -1,51 +1,55 @@
 # users/views.py
-
-from django.shortcuts import render, get_object_or_404
+from django.contrib.auth import login
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView
 
 from .models import Tourist
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import User, Group
 
+# class SignUp(CreateView):
+#     form_class = UserCreationForm
+#     template_name = "registration/signup.html"
+#     success_url = reverse_lazy("rocks:home")
 
-# Создаем здесь представления.
-
-def home(request):
-    return render(request, "users/home.html")
-
-
-class SignUp(CreateView):
-    form_class = UserCreationForm
-    success_url = reverse_lazy("create_user_profile")
-    template_name = "registration/signup.html"
+def UserRegister(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.save()
+            group = Group.objects.get(name='tourist')
+            user.groups.add(group)
+            user.save()
+            login(request, user)
+            return redirect('rocks:home')
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/signup.html', {'form': form})
 
 
 class CreateProfilePageView(CreateView):
     model = Tourist
     template_name = 'users/create_profile.html'
-    fields = "__all__"
+    fields = ["first_name", "middle_name", "last_name", "email", "phone"]
 
-    # def add_to_group(self, request):
-    #     user = super(CreateProfilePageView, self).save(request)
-    #     tourust_group = Group.objects.get(name='gamer')
-    #     tourust_group.user_set.add(user)
-
-    def form_valid(self, form, request):
-        user = super(CreateProfilePageView, self).save(request)
-        tourist_group = Group.objects.get(name='tourist')
-        tourist_group.user_set.add(user)
+    def form_valid(self, form):
+        form.save(commit=False)
         form.instance.user = self.request.user
+        form.save()
         return super().form_valid(form)
 
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('rocks:home')
 
 
 class UpdateProfilePageView(UpdateView):
     model = Tourist
-    fields = ["__all__"]
+    fields = ["first_name", "middle_name", "last_name", "email", "phone"]
     template_name = "users/create_profile.html"
+    success_url = reverse_lazy('rocks:home')
 
 
 class ShowProfilePageView(DetailView):

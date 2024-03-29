@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %} Update a pass {% endblock title %}
+{% block text %}
+
+<h1> "Изменить первал "{{ rock.title }}"</h1>
+{% endblock %}
+
+{% block content %}
+{% if user.id == rock.tourist.user_id or user.is_superuser %}
+
+<div class="features">
+
+    <form method="POST" class="form-parent" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-error"> {{ form.non_field_errors }}</div>
+
+        {% for f in form %}
+        <p label class="form-label" for={{ f.id_for_lablel }}>
+            {{f.label}}: </label> {{f}} </p>
+        <div class="form-error">{{f.errors}}</div>
+        {% endfor %}
+
+        <input type="submit" value=' "Сохранить" '>
+
+    </form>
+</div>
+<br/>  <br/>
+
+{% else %}
+<h2 style='color:red'>{{ user.tourist }}, вы не можете изменить перевал {{rock.tourist}}, не являясь его владельцем</h2>
+
+{% endif %}
+<input type="button" value="Cancel" onclick="history.back()"/>
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% block title %} Delete chosen pass {% endblock title %}
+
+{% block content %}
+
+{% if user.id == rock.tourist.user_id or user.is_superuser%}
+
+<div class="features">
+    <h1> {{user.tourist}}, вы действительно хотите удалить этот перевал? </h1>
+
+    <table>
+        <div class="table">
+            <tr align="left">
+                <th> Автор:</th>
+                <th> title:</th>
+                <th> level:</th>
+                <th> Дата публикации:</th>
+                <th> Статус:</th>
+            </tr>
+
+            <tr>
+                <td width="300">{{rock.tourist}}</td>
+                <td width="300">{{rock.title}}</td>
+                <td width="100">{{rock.level}}</td>
+                <td width="200">{{rock.add_time}}</td>
+                <td width="100">{{rock.pass_status}}</td>
+
+
+            </tr>
+        </div>
+    </table>
+
+    <br>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Confirm">
+        <input type="button" value="Cancel" onclick="history.back()"/>
+    </form>
+    <br/> <br/>
+
+    {% else %}
+    <h2 style='color:red'>{{user}}, вы не можете удалить перевал от {{rock.tourist}}, не являясь его владельцем</h2>
+    <a href="{% url 'rocks:home' %}">
+        <li><i class="fa-solid fa-house"></i> <<<< На главнаую</li>
+    </a>
+    {% endif %}
+
+    {% endblock content %}
+</div>
+</div>

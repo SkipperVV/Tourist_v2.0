@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>{% block title %} Main page {% endblock title %}</title>
+</head>
+<body style="background: #ABB2B9;">
+{% block text %} {% endblock text %}
+{% block content %} {% endblock content %}
+
+{% if not user.is_authenticated %}
+<br>
+<p>'Для полноценного присутствия требуется авторизация или регистрация'</p>
+<a href="{% url 'login' %}">
+    <li><i class="fa-solid fa-right-to-bracket"></i> Вход</li>
+</a><br>
+<a href="{% url 'users:signup' %}">
+    <li><i class="fa-solid fa-right-to-bracket"></i> Регистрация</li>
+</a>
+{% else %}
+<br>
+<hr>
+<p>
+
+<h2 style='color:blue'>Вы авторизированы как "{{ user|upper }}" </h2>
+{% if user.is_superuser %}
+<h2>Вы еще и модератор и можете изменять статус данных</h2>
+{% endif %}
+{% if not user.tourist %}
+<h2>Еще не турист!? {{ user.tourist }}
+    <a href="{% url 'users:create_user_profile' %}">Стать туристом</a><br>
+</h2>
+{% else %}
+
+<h2>{{ user.tourist }}, вы можете
+    <a href="{% url 'rocks:create' %}">
+        <i class="fa-regular fa-newspaper"></i> добавить </a> новый перевал и <br>
+<a href="{% url 'users:update_user_profile' user.tourist.pk %}">Редактировать свой профиль</a><br>
+    </h2>
+<br/>
+
+{% endif %}
+<form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">logout</button>
+</form>
+
+{% endif %}
+
+</body>
+</html>

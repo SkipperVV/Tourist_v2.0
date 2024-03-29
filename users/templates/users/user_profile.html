@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <h1>Профиль туриста {{ user.tourist }}</h1>
+
+
+</div>
+
+<div class="card-body">
+    <h2>
+        <p><strong>ФИО:</strong> {{ page_user }}</p>
+        <p><strong>Емэйл:</strong> {{ page_user.email }}</p>
+        <p><strong>Телефон:</strong> {{ page_user.phone }}</p>
+        <p><strong>user.id / tourist.user.id:</strong> {{ user.id }} / {{ tourist.user.id }}</p>
+    </h2>
+    {% if user.id == tourist.user.id %}
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <a href="{% url 'users:update_user_profile' user.id %}"> Изменить профиль </a>
+    </form>
+    <hr>
+    {% else %}
+    <h2 style = 'color:red' >Вы не можете изменить этот профиль, не являясь его владельцем</h2>
+    {% endif %}
+
+  <input type="button" value="Cancel" onclick="history.back()"/>
+
+</div>
+
+{% endblock content %}
