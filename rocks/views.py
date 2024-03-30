@@ -2,16 +2,13 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import render
 
-# Create your views here.
 import datetime
-
 from django.contrib.auth.mixins import PermissionRequiredMixin, UserPassesTestMixin
-from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 
 from . import forms
-from .forms import RockCreateForm
+from .forms import RockCreateForm, RockUpdateForm
 from .models import MountainPass
 
 
@@ -72,7 +69,7 @@ class RockCreateView(PermissionRequiredMixin, CreateView):
 
 class RockUpdateView(PermissionRequiredMixin, UpdateView):
     permission_required = ('rocks.change_mountainpass')
-    form_class = RockCreateForm
+    form_class = RockUpdateForm
     model = MountainPass
     context_object_name = 'rock'
     template_name = 'rocks/update.html'
@@ -80,17 +77,17 @@ class RockUpdateView(PermissionRequiredMixin, UpdateView):
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs.update({'user': self.request.user})
+        kwargs.update({'tourist': self.request.user})
         return kwargs
 
-    def test_func(self):
-        rock = self.get_object()
-        if self.request.user == rock.tourist:
-            return True
-        return False
+    # def test_func(self):
+    #     rock = self.get_object()
+    #     if self.request.user == rock.tourist:
+    #         return True
+    #     return False
 
     def form_valid(self, form):
-        form.instance.tourist = self.request.user.tourist
+        # form.instance.tourist = self.request.user.tourist
         return super().form_valid(form)
 
     # получить информацию об объекте, который мы собираемся редактировать
