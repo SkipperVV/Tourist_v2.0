@@ -23,11 +23,12 @@
 <hr>
 <p>
 
-<h2 style='color:blue'>Вы авторизированы как "{{ user|upper }}" </h2>
+<h2 style='color:grey; ' >Вы авторизированы как "{{ user|upper }}" </h2>
 {% if user.is_superuser %}
 <h2>Вы еще и модератор и можете изменять статус данных</h2>
 {% endif %}
 {% if not user.tourist %}
+<<<<<<< Updated upstream
 <h2>Еще не турист!? {{ user.tourist }}
     <a href="{% url 'users:create_user_profile' %}">Стать туристом</a><br>
 </h2>
@@ -38,6 +39,18 @@
         <i class="fa-regular fa-newspaper"></i> добавить </a> новый перевал и <br>
 <a href="{% url 'users:update_user_profile' user.tourist.pk %}">Редактировать свой профиль</a><br>
     </h2>
+=======
+<h3>Еще не турист? Заполните свой профиль   > {{ user.tourist }}
+    <a href="{% url 'users:create_user_profile' %}">  Стать туристом</a><br>
+</h3>
+{% else %}
+
+<h3>{{ user }}, как наш турист, вы можете:<br>
+    <a href="{% url 'rocks:create' %}">  Добавить новый перевал >>></a>  <br>
+<a href="{% url 'users:update_user_profile' user.tourist.pk %}">Редактировать свой профиль >>></a><br>
+
+    </h3>
+>>>>>>> Stashed changes
 <br/>
 
 {% endif %}

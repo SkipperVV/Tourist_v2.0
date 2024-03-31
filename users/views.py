@@ -10,10 +10,6 @@ from django.views.generic.edit import CreateView, UpdateView
 from .models import Tourist
 from django.contrib.auth.models import User, Group
 
-# class SignUp(CreateView):
-#     form_class = UserCreationForm
-#     template_name = "registration/signup.html"
-#     success_url = reverse_lazy("rocks:home")
 
 def UserRegister(request):
     if request.method == 'POST':
@@ -36,7 +32,7 @@ class CreateProfilePageView(CreateView):
     template_name = 'users/create_profile.html'
     fields = ["first_name", "middle_name", "last_name", "email", "phone"]
 
-    def form_valid(self, form):
+    def form_valid(self, form, request):
         form.save(commit=False)
         form.instance.user = self.request.user
         form.save()

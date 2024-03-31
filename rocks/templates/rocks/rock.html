@@ -5,12 +5,23 @@
 
 <div class="container">
     <div class="card" style="max-width: 50rem;">
+<<<<<<< Updated upstream
         <h2>
             <div class="card-header"> Обновление от {{ rock.add_time }}</div>
             <div class="card-header"> Автора: <b>
                 <mark>'{{ rock.tourist }}'</mark>
             </b></div>
         </h2>
+=======
+        <h3>
+            <div class="card-header"> Зарегистрирован {{ rock.add_time }}</div>
+            <br/>
+            <div class="card-header">
+               <h3>туристом:  <a href="{% url 'users:user_profile' rock.tourist.user_id %}">{{ rock.tourist }}</a></h3>
+            </b></div>
+            <hr/>
+        </h3>
+>>>>>>> Stashed changes
 
         <h3>
             <div class="card-body">

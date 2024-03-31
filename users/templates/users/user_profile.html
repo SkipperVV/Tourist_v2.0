@@ -17,7 +17,7 @@
     {% if user.id == tourist.user.id %}
     <form method="post">{% csrf_token %}
         {{ form.as_p }}
-        <a href="{% url 'users:update_user_profile' user.id %}"> Изменить профиль </a>
+        <a href="{% url 'users:update_user_profile' user.id %}"> Редактировать профиль </a>
     </form>
     <hr>
     {% else %}

@@ -27,7 +27,7 @@ class MountainPass(models.Model):
     level = models.CharField(choices=CATEGORY, max_length=100)
     level_category = models.CharField(max_length=100)
     image = models.ImageField(upload_to=user_directory_path, blank=True)
-    pass_status = models.CharField(choices=STATUS, max_length=50,  default="new", help_text="Изменить статус после проверки")
+    pass_status = models.CharField(choices=STATUS, max_length=50,  default="новый", help_text="Изменить статус после проверки")
 
     def __str__(self):
         return f"Перевал '{self.title}', Позиция: {self.latitude}N / {self.longitude}E, Высота: {self.height}м, Статус: {self.pass_status}"

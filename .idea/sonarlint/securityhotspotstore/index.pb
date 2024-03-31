@@ -63,3 +63,5 @@ Q
 !rocks/templates/rocks/update.html,d\c\dc378731efe158eef0db341313d90cb1107a95e0
 7
 test.py,a\3\a36e355ddb203d7d4133221f339dc406cb9f480f
+d
+4.venv/Lib/site-packages/django/views/generic/edit.py,3\f\3ffa9bbf66f48867cbe149dd1f8d2f5d07c6c67b

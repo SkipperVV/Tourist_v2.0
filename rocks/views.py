@@ -1,8 +1,11 @@
+<<<<<<< Updated upstream
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import render
 
 # Create your views here.
+=======
+>>>>>>> Stashed changes
 import datetime
 
 from django.contrib.auth.mixins import PermissionRequiredMixin, UserPassesTestMixin
@@ -41,7 +44,6 @@ class RockView(ListView):
         _id = self.kwargs.get('pk')
         context['time_now'] = datetime.datetime.utcnow()
         context['rock'] = MountainPass.objects.get(id=_id)
-        # return render(request, 'main_view.html', context)
         return context
 
 
@@ -86,10 +88,13 @@ class RockUpdateView(PermissionRequiredMixin, UpdateView):
         return False
 
     def form_valid(self, form):
+<<<<<<< Updated upstream
         form.instance.tourist = self.request.user.tourist
+=======
+>>>>>>> Stashed changes
         return super().form_valid(form)
 
-    # получить информацию об объекте, который мы собираемся редактировать
+    # To get object to update
     def get_object(self, **kwargs):
         _id = self.kwargs.get('pk')
         return MountainPass.objects.get(pk=_id)
