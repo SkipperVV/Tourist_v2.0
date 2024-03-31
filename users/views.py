@@ -27,12 +27,13 @@ def UserRegister(request):
     return render(request, 'registration/signup.html', {'form': form})
 
 
-class CreateProfilePageView(CreateView):
+class CreateProfilePageView(LoginRequiredMixin, CreateView):
     model = Tourist
     template_name = 'users/create_profile.html'
+    permission_required = ['create_profile']
     fields = ["first_name", "middle_name", "last_name", "email", "phone"]
 
-    def form_valid(self, form, request):
+    def form_valid(self, form):
         form.save(commit=False)
         form.instance.user = self.request.user
         form.save()
@@ -43,13 +44,15 @@ class CreateProfilePageView(CreateView):
 
 class UpdateProfilePageView(UpdateView):
     model = Tourist
+    permission_required =['update_profile']
     fields = ["first_name", "middle_name", "last_name", "email", "phone"]
     template_name = "users/create_profile.html"
     success_url = reverse_lazy('rocks:home')
 
 
-class ShowProfilePageView(DetailView):
+class ShowProfilePageView(LoginRequiredMixin, DetailView):
     model = Tourist
+    permission_required =['view_user']
     template_name = 'users/user_profile.html'
 
     def get_context_data(self, *args, **kwargs):

@@ -65,3 +65,13 @@ Q
 test.py,a\3\a36e355ddb203d7d4133221f339dc406cb9f480f
 d
 4.venv/Lib/site-packages/django/views/generic/edit.py,3\f\3ffa9bbf66f48867cbe149dd1f8d2f5d07c6c67b
+?
+docs/mkdocs.yml,9\2\92296d7c759daa3d9dddb501c0aa111785edca58
+C
+docs/docs/Readme.md,2\f\2f7bf8cb66e4e888ae6e7475d17bb1ced433fbdb
+B
+docs/docs/index.md,a\4\a4f24c6355278cbaa287115d9a8a7a2ecd69fbd0
+D
+docs/site/index.html,1\b\1b40452f767fa5446d34b78c9e30c3d258cdd38d
+C
+docs/docs/ReadMe.md,b\0\b0a29ef46ddbda592608fc29da63e354a80a4d90

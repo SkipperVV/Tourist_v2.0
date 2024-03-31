@@ -23,37 +23,23 @@
 <hr>
 <p>
 
-<h2 style='color:grey; ' >Вы авторизированы как "{{ user|upper }}" </h2>
-{% if user.is_superuser %}
-<h2>Вы еще и модератор и можете изменять статус данных</h2>
-{% endif %}
+<h3 style='color:green'>Вы авторизированы как "{{ user|upper }}" </h3>
 {% if not user.tourist %}
-<<<<<<< Updated upstream
-<h2>Еще не турист!? {{ user.tourist }}
-    <a href="{% url 'users:create_user_profile' %}">Стать туристом</a><br>
-</h2>
-{% else %}
-
-<h2>{{ user.tourist }}, вы можете
-    <a href="{% url 'rocks:create' %}">
-        <i class="fa-regular fa-newspaper"></i> добавить </a> новый перевал и <br>
-<a href="{% url 'users:update_user_profile' user.tourist.pk %}">Редактировать свой профиль</a><br>
-    </h2>
-=======
-<h3>Еще не турист? Заполните свой профиль   > {{ user.tourist }}
-    <a href="{% url 'users:create_user_profile' %}">  Стать туристом</a><br>
+<h3>Еще не турист!? {{ user.tourist }}
+    <a href="{% url 'users:create_user_profile' %}"> Стать туристом</a><br>
 </h3>
 {% else %}
-
-<h3>{{ user }}, как наш турист, вы можете:<br>
-    <a href="{% url 'rocks:create' %}">  Добавить новый перевал >>></a>  <br>
-<a href="{% url 'users:update_user_profile' user.tourist.pk %}">Редактировать свой профиль >>></a><br>
-
-    </h3>
->>>>>>> Stashed changes
-<br/>
-
+<h3>{{ user.tourist }}, вы можете<br>
+    <a href="{% url 'rocks:create' %}"> Добавить новый перевал </a> <br>
+    <a href="{% url 'users:update_user_profile' user.tourist.pk %}">Редактировать свой профиль</a><br>
+</h3>
 {% endif %}
+
+{% if user.is_superuser %}
+<h3>Как модератор, вы можете: </h3>
+<a href="/admin" target="_blank">Открыть интерфейс администратора</a><br>
+<a href="http://127.0.0.1:8001" target="_blank">Открыть справку по сайту</a><br>
+{% endif %}<br>
 <form method="post" action="{% url 'logout' %}">
     {% csrf_token %}
     <button type="submit">logout</button>

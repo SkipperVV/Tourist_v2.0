@@ -1,0 +1,28 @@
+site_name: Инструкция по использованию
+
+nav:
+  - Введение: index.md
+  - Описание: ReadMe.md
+
+dev_addr: 127.0.0.1:8001
+
+theme: readthedocs
+
+markdown_extensions:
+  - toc:
+      permalink: "#"
+
+use_directory_urls: False
+docs_dir: docs
+site_dir: site
+
+plugins:
+
+  - i18n:
+      docs_structure: suffix
+      default_language: ru
+      languages:
+        ru:
+          name: Russian
+          build: true
+          site_name: "Инструкция"

@@ -24,8 +24,10 @@
     <h2 style = 'color:red' >Вы не можете изменить этот профиль, не являясь его владельцем</h2>
     {% endif %}
 
-  <input type="button" value="Cancel" onclick="history.back()"/>
-
+<!--  <input type="button" value="Cancel" onclick="history.back()"/>-->
 </div>
-
+<br/>
+        <a href="{% url 'rocks:home' %}">
+        <li><i class="fa-solid fa-house"></i> <<<< На главную</li>
+    </a>
 {% endblock content %}

@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-{% if user.id == rock.tourist.user_id or user.is_superuser %}
+{% if rock.pass_status == "новый" and user.tourist or user.is_superuser %}
 
 <div class="features">
 
@@ -29,7 +29,7 @@
 <br/>  <br/>
 
 {% else %}
-<h2 style='color:red'>{{ user.tourist }}, вы не можете изменить перевал {{rock.tourist}}, не являясь его владельцем</h2>
+<h2 style='color:red'>{{ user.tourist }}Вы не можете изменить перевал, не являясь "Туристом"</h2>
 
 {% endif %}
 <input type="button" value="Cancel" onclick="history.back()"/>

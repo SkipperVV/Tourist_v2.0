@@ -1,40 +1,21 @@
 
-<<<<<<< Updated upstream
-sWeb:TableWithoutCaptionCheck" Add a description to this table.(¿‰˜ÿÿÿÿÿJ$0fb886b4-e741-4ab1-966e-1ff175fafef1
-i	Web:S1827")Remove this deprecated "align" attribute.(¼ø†şÿÿÿÿJ$eaf69ddd-ea35-4e3a-9d63-4b1cb5f9401e
-tWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(À¹ÏşÿÿÿÿJ$29523c95-83ae-4a5f-a67b-d230ae822117
-d	Web:S1827*")Remove this deprecated "width" attribute.(×Ü«óJ$77407fd1-7190-48f3-924b-d6bc977d2d3d
-i	Web:S1827-")Remove this deprecated "width" attribute.(üºšüÿÿÿÿJ$ecc92594-8261-4671-a6e4-6b886b28bb9e
-tWeb:AvoidCommentedOutCodeCheck."Remove this commented out code.(½ê†–ùÿÿÿÿJ$6fc927fc-c3ad-443a-b79f-80a38186a535
-J	Web:S1827/")Remove this deprecated "width" attribute.(×™ƒêúÿÿÿÿ8ˆ¼äÖè1
-c	Web:S18270")Remove this deprecated "width" attribute.(ğòİYJ$e4a4acba-ba2a-4b41-a3a3-04ce3653da13
-i	Web:S18271")Remove this deprecated "width" attribute.(Ù±ææÿÿÿÿÿJ$87435c33-9348-4efb-8527-fd20844ccf51
-i	Web:S18272")Remove this deprecated "width" attribute.(®äÓšÿÿÿÿÿJ$77bbb496-7045-4169-a8b5-5c99df80e05e
-i	Web:S18273")Remove this deprecated "width" attribute.(“°½—ıÿÿÿÿJ$1e9a98ff-7e94-4549-bec4-1801eff1ce7e
-d	Web:S18274")Remove this deprecated "width" attribute.(ÃÜóâJ$8be5abf7-3b21-4b44-842b-34ed7dae2d68
-d	Web:S18276")Remove this deprecated "width" attribute.(‘Œ¦ÂJ$34f9e8d6-f36b-4cb9-b516-7ba61150a5ae
-p	Web:S18278")Remove this deprecated "width" attribute.(»Ú‰˜şÿÿÿÿ8€ÅÆÖè1J$54191b13-7150-4a36-bd3f-6c4e6265fa08
-k	Web:S1827:")Remove this deprecated "width" attribute.(â±òº8•ÇÔÖè1J$1be0ea0b-85e5-4b37-b52d-2ae278224e92
-p	Web:S1827;")Remove this deprecated "width" attribute.(ôíÀøÿÿÿÿÿ8øÖÛÖè1J$88cdb162-1864-4426-8353-68fa2ac5607b
-=======
-sWeb:TableWithoutCaptionCheck" Add a description to this table.(¿‰˜ÿÿÿÿÿJ$197e03a5-be76-4192-a315-02f28614b5a1
-i	Web:S1827")Remove this deprecated "align" attribute.(¼ø†şÿÿÿÿJ$99521086-726e-46bf-a51b-1fabab40ff0b
-p	Web:S1827%")Remove this deprecated "align" attribute.(¼ø†şÿÿÿÿ8Ê½‘ıè1J$b45b2c58-b579-4631-b3a8-c69952cf823b
-d	Web:S1827&")Remove this deprecated "width" attribute.(×Ü«óJ$91d2b5d6-a227-48c2-8e02-173357acc0a5
-i	Web:S1827(")Remove this deprecated "width" attribute.(üºšüÿÿÿÿJ$60a25473-b577-448c-8814-d7fa113305a0
-p	Web:S1827)")Remove this deprecated "width" attribute.(×™ƒêúÿÿÿÿ8ˆ¼äÖè1J$73647b90-9c43-4f2b-92c9-5eb4a9a0268f
-k	Web:S1827*")Remove this deprecated "align" attribute.(¹´øª8ã“ıè1J$03dbada6-6dfb-4388-86f6-179e36c86f89
-d	Web:S1827*")Remove this deprecated "width" attribute.(¹´øªJ$b177f2c7-1399-4f45-8aa5-b381fa4af8ab
-k	Web:S1827+")Remove this deprecated "align" attribute.(Õ‘Æ–8Â£™ıè1J$93d46625-9d11-479c-a619-acb9a60b9e12
-k	Web:S1827+")Remove this deprecated "width" attribute.(Õ‘Æ–8Â£™ıè1J$a45d4220-1a05-43da-9f4c-3f51d276b381
-p	Web:S1827,")Remove this deprecated "width" attribute.(®äÓšÿÿÿÿÿ8¼ĞÛúè1J$8114c409-e07e-4baf-8d2e-be70dcece012
-k	Web:S1827-")Remove this deprecated "align" attribute.(šàö8¿éıè1J$c35b03a6-6e48-4991-b509-c3ea7bd63de7
-k	Web:S1827-")Remove this deprecated "width" attribute.(šàö8¿éıè1J$93600321-62b0-4831-a1b8-a69ecce241fd
-k	Web:S1827.")Remove this deprecated "align" attribute.(ÚÀîË8‰ıè1J$da8ca091-13ff-4a3a-82a0-929ebaca200e
-k	Web:S1827.")Remove this deprecated "width" attribute.(ÚÀîË8‰ıè1J$fc99b69d-d601-41b6-b79d-c308b6dd2d5d
-p	Web:S1827/")Remove this deprecated "width" attribute.(ëŸãäûÿÿÿÿ8€ÅÆÖè1J$75a180d6-8447-4bac-a1fa-a00e67cbe981
-p	Web:S18271")Remove this deprecated "width" attribute.(¿éşüÿÿÿÿ8¼ĞÛúè1J$1e3bef8f-c0cf-4372-98b5-fbbd9763f047
-r	Web:S18273"+Remove this deprecated "bgcolor" attribute.(¯ú³­üÿÿÿÿ8âı°ıè1J$6b80b775-436b-4622-a85f-792b4fbfd7ed
-p	Web:S18273")Remove this deprecated "width" attribute.(¯ú³­üÿÿÿÿ8à»šıè1J$b1c128cf-ea93-4119-9168-bab163cc7753
-k	Web:S18276")Remove this deprecated "width" attribute.(ûŒ­‡8ÒÊªıè1J$e4808ccf-a93d-40b6-ba57-8e17ed965a87
->>>>>>> Stashed changes
+zWeb:TableWithoutCaptionCheck" Add a description to this table.(¿‰˜ÿÿÿÿÿ8ø’™£é1J$d301f26f-a2d6-4f3e-85e1-5306c352e6d4
+p	Web:S1827")Remove this deprecated "align" attribute.(¼ø†şÿÿÿÿ8ø’™£é1J$466523fd-8256-4bfb-8166-7655afbccd66
+p	Web:S1827%")Remove this deprecated "align" attribute.(¼ø†şÿÿÿÿ8àåÃ£é1J$f80b3da9-acbe-428f-9d16-6e286f4a46f8
+k	Web:S1827&")Remove this deprecated "width" attribute.(×Ü«ó8àåÃ£é1J$b7bd3626-07bc-4f6f-b786-ade6f1e946bb
+p	Web:S1827(")Remove this deprecated "width" attribute.(üºšüÿÿÿÿ8àåÃ£é1J$a7434147-5229-47a6-8a45-79b1823506be
+p	Web:S1827)")Remove this deprecated "width" attribute.(×™ƒêúÿÿÿÿ8àåÃ£é1J$6dec049a-5ceb-4239-b6a1-04161295f836
+k	Web:S1827*")Remove this deprecated "align" attribute.(¹´øª8àåÃ£é1J$9077db41-80f3-4d1c-bffe-5c14a1b2ffef
+k	Web:S1827*")Remove this deprecated "width" attribute.(¹´øª8àåÃ£é1J$80dc20d7-0741-44a0-afcd-77c0fc7879f4
+k	Web:S1827+")Remove this deprecated "align" attribute.(Õ‘Æ–8àåÃ£é1J$ea8f7fb9-7a00-41e9-a9ed-4a2be8494149
+k	Web:S1827+")Remove this deprecated "width" attribute.(Õ‘Æ–8àåÃ£é1J$382e0b66-daf5-4376-b407-73fb5a859563
+p	Web:S1827,")Remove this deprecated "width" attribute.(®äÓšÿÿÿÿÿ8àåÃ£é1J$c922e72c-796c-45cb-8569-cc5e303891c3
+k	Web:S1827-")Remove this deprecated "align" attribute.(šàö8àåÃ£é1J$a01251b1-298c-45bb-8d62-9b227e7e6fed
+k	Web:S1827-")Remove this deprecated "width" attribute.(šàö8àåÃ£é1J$c3d771c3-a639-4b22-8009-b0ae181913e8
+k	Web:S1827.")Remove this deprecated "align" attribute.(ÚÀîË8àåÃ£é1J$267917e9-8d91-42c2-9723-def31cf242a0
+k	Web:S1827.")Remove this deprecated "width" attribute.(ÚÀîË8àåÃ£é1J$9015ece6-df6b-42ea-a88e-7a41453156ef
+p	Web:S1827/")Remove this deprecated "width" attribute.(ëŸãäûÿÿÿÿ8àåÃ£é1J$e36c6e76-ceb4-41cc-a6b4-14b8b81d068a
+p	Web:S18272")Remove this deprecated "width" attribute.(¿éşüÿÿÿÿ8àåÃ£é1J$906cc90e-2d1b-4ca2-93fa-50fa3594f188
+r	Web:S18274"+Remove this deprecated "bgcolor" attribute.(¯ú³­üÿÿÿÿ8àåÃ£é1J$6458be9b-e361-4692-b3bd-c77ca8ee8f09
+p	Web:S18274")Remove this deprecated "width" attribute.(¯ú³­üÿÿÿÿ8àåÃ£é1J$ed0fd40f-2fe0-4f88-97a4-20fa6d489533
+k	Web:S18277")Remove this deprecated "width" attribute.(ûŒ­‡8àåÃ£é1J$267fabde-2d8d-4397-ba56-866b2993acc1

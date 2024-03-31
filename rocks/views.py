@@ -1,20 +1,10 @@
-<<<<<<< Updated upstream
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
-from django.shortcuts import render
-
-# Create your views here.
-=======
->>>>>>> Stashed changes
 import datetime
-
 from django.contrib.auth.mixins import PermissionRequiredMixin, UserPassesTestMixin
-from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 
 from . import forms
-from .forms import RockCreateForm
+from .forms import RockCreateForm, RockUpdateForm
 from .models import MountainPass
 
 
@@ -47,7 +37,6 @@ class RockView(ListView):
         return context
 
 
-# @login_required
 class RockCreateView(PermissionRequiredMixin, CreateView):
     form_class = RockCreateForm
     model = MountainPass
@@ -74,27 +63,28 @@ class RockCreateView(PermissionRequiredMixin, CreateView):
 
 class RockUpdateView(PermissionRequiredMixin, UpdateView):
     permission_required = ('rocks.change_mountainpass')
-    form_class = RockCreateForm
+    form_class = RockUpdateForm
     model = MountainPass
     context_object_name = 'rock'
     template_name = 'rocks/update.html'
     success_url = '/'
 
-    # success_url = f'/Rock<int:{_id}>
-    def test_func(self):
-        rock = self.get_object()
-        if self.request.user == rock.tourist:
-            return True
-        return False
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs.update({'tourist': self.request.user})
+        return kwargs
+
+    # def test_func(self):
+    #     rock = self.get_object()
+    #     if self.request.user == rock.tourist:
+    #         return True
+    #     return False
 
     def form_valid(self, form):
-<<<<<<< Updated upstream
-        form.instance.tourist = self.request.user.tourist
-=======
->>>>>>> Stashed changes
+        # form.instance.tourist = self.request.user.tourist
         return super().form_valid(form)
 
-    # To get object to update
+    # получить информацию об объекте, который мы собираемся редактировать
     def get_object(self, **kwargs):
         _id = self.kwargs.get('pk')
         return MountainPass.objects.get(pk=_id)

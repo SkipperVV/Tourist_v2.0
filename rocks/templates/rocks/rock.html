@@ -5,23 +5,14 @@
 
 <div class="container">
     <div class="card" style="max-width: 50rem;">
-<<<<<<< Updated upstream
         <h2>
-            <div class="card-header"> Обновление от {{ rock.add_time }}</div>
-            <div class="card-header"> Автора: <b>
-                <mark>'{{ rock.tourist }}'</mark>
-            </b></div>
-        </h2>
-=======
-        <h3>
             <div class="card-header"> Зарегистрирован {{ rock.add_time }}</div>
             <br/>
             <div class="card-header">
                <h3>туристом:  <a href="{% url 'users:user_profile' rock.tourist.user_id %}">{{ rock.tourist }}</a></h3>
             </b></div>
             <hr/>
-        </h3>
->>>>>>> Stashed changes
+        </h2>
 
         <h3>
             <div class="card-body">
@@ -34,23 +25,27 @@
                 {% endif %}
 
                 <h3 class="card-title">
-                    Перевал:  {{ rock.title }}
+                    Перевал: {{ rock.title }}
                 </h3>
-                <p class="card-text">Широта:  {{ rock.latitude }}</p>
-                <p class="card-text">Долгота:  {{ rock.longitude }}</p>
-                <p class="card-text">Высота:  {{ rock.height }}</p>
-                <p class="card-text">Сезон:  {{ rock.level }}</p>
-                <p class="card-text">Уровень сложности:  {{ rock.level_category }}</p>
-                <p class="card-text">Статус проверки:  {{ rock.pass_status }}</p>
+                <p class="card-text">Широта: {{ rock.latitude }}</p>
+                <p class="card-text">Долгота: {{ rock.longitude }}</p>
+                <p class="card-text">Высота: {{ rock.height }}</p>
+                <p class="card-text">Сезон: {{ rock.level }}</p>
+                <p class="card-text">Уровень сложности: {{ rock.level_category }}</p>
+                <p class="card-text">Статус проверки: {{ rock.pass_status }}</p>
             </div>
         </h3>
     </div>
 </div>
 
 <br/>  <br/>
-<h2>
-<a href="{% url 'rocks:home' %}">
-    <li><i class="fa-solid fa-house"></i> <<<< На главнаую</li>
-</a>
-</h2>
+<h3>
+    {% if user.is_superuser or rock.pass_status == 'новый' and user.tourist %}
+    <a href="{% url 'rocks:update' rock.id %}"><u>&#128260; Редактировать</u></a>   или
+    <a href="{% url 'rocks:delete' rock.id %}"><u> &#128683; Удалить</u></a><br/><br/>
+    {% endif %}
+    <a href="{% url 'rocks:home' %}">
+        <li><i class="fa-solid fa-house"></i> <<<< На главную</li>
+    </a>
+</h3>
 {% endblock content %}
